@@ -16,7 +16,7 @@ port_num = {"A": "9000", "B": "8000", "C": "7000"}
 
 def send_message(message_to_be_sent,to_node):
 
-	print("[*] {B}-->{",to_node.strip()," MSG:'",message_to_be_sent,"' Time Vector Before: ",VECTOR_AT_NODE_B)
+	print("[*] {B}-->{",to_node.strip(),"} MSG:'",message_to_be_sent,"' Time Vector Before: ",VECTOR_AT_NODE_B)
 	VECTOR_AT_NODE_B[1] += 1
 	proxy_server = xmlrpc.client.ServerProxy(("http://localhost:"+port_num[to_node.strip()]))
 	if (to_node.strip() == "A"):
@@ -25,7 +25,7 @@ def send_message(message_to_be_sent,to_node):
 	elif (to_node.strip() == "C"):
 		status = proxy_server.rpc_callback_at_nodeC(message_to_be_sent,"B" ,to_node,VECTOR_AT_NODE_B[1])
 
-	print("[*] {B}-->{",to_node.strip()," MSG:'",message_to_be_sent,"' Time Vector After: ",VECTOR_AT_NODE_B,"\n")
+	print("[*] {B}-->{",to_node.strip(),"} MSG:'",message_to_be_sent,"' Time Vector After: ",VECTOR_AT_NODE_B,"\n")
 
 def recv_message(message,from_node,time_at_node):
 
