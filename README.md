@@ -12,9 +12,6 @@ Python 3.10_
 
 ## Contents of the PROJECT:
 
-### Part_1_DS:
-A python application to DOWNLOAD, UPLOAD, RENAME, DELETE files between client-server usig RPC</br>
-
 **How to Use:**</br>
 1. Open any Linux terminal and run the command "python3 master_node.py" to get the Master node running </br>
 2. Open any Linux terminal and run the command "python3 node_A.py" to get the node A running </br>
