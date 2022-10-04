@@ -11,6 +11,7 @@ Developed and tested the software on Ubunut 22.04 LTS. Any linux distribution sh
 Python 3.10_
 
 ## Contents of the PROJECT:
+Implementing a vector clock for distributed system.Created two threads for each process, one for sending messages to other nodes and one for listening to its communication port. Communication among nodes is done using RPC. Once the process sends a message, it prints its vector clock before and after sending a message. Similarly, once a process receives a message, it prints its vector clock before and after receiving the message. The number of processes (machines) is fixed (equal to or larger than 3) and processes will not fail, join, or leave the distributed system.
 
 **How to Use:**</br>
 1. Open any Linux terminal and run the command "python3 master_node.py" to get the Master node running </br>
