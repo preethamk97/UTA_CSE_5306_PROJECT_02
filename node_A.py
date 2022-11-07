@@ -31,8 +31,13 @@ def recv_message(message,from_node,time_at_node):
 
 	print("[*] {",from_node.strip(),"} ---> {A} MSG: ",message,"BEFORE Vector Node A: ",VECTOR_AT_NODE_A)
 	VECTOR_AT_NODE_A[0] += 1
-	VECTOR_AT_NODE_A[1] = time_at_node[1]
-	VECTOR_AT_NODE_A[2] = time_at_node[2]
+
+	if (VECTOR_AT_NODE_A[1] <  time_at_node[1]):
+		VECTOR_AT_NODE_A[1] = time_at_node[1]
+
+	if(VECTOR_AT_NODE_A[2] < time_at_node[2]):
+		VECTOR_AT_NODE_A[2] = time_at_node[2]
+
 	print("[*] {",from_node.strip(),"} ---> {A} MSG: ",message,"AFTER Vector Node A: ",VECTOR_AT_NODE_A,"\n")
 
 def rpc_callback_at_nodeA(message_to_be_sent = " ",from_node = " " ,to_node = " ", time_at_node = None):
